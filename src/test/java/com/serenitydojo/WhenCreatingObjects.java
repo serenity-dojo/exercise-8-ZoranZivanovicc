@@ -3,8 +3,8 @@ package com.serenitydojo;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.IsEqual.equalTo;
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 public class WhenCreatingObjects {
     @Test
@@ -45,8 +45,8 @@ public class WhenCreatingObjects {
         Pet spot = new Cat("Spot","String", 5);
         Pet hazel = new Hamster("Hazel", 1, "Wheel");
 
-        assertThat(fido.play(), equalTo("plays with bone"));
-        assertThat(spot.play(), equalTo("plays with string"));
-        assertThat(hazel.play(), equalTo("runs in wheel"));
+        assertThat(fido.play()).isEqualTo("plays with bone");
+        assertThat(spot.play()).isEqualTo("plays with string");
+        assertThat(hazel.play()).isEqualTo("runs in wheel");
     }
 }
